@@ -133,9 +133,13 @@
    * **Training**: Training took 61 episodes to learn a policy that would receive an average score of **0.5** averaged on 100 episodes.
    Below the plot for the whole training (stopped as soon as the goal was reached) and a close-up on the last few hundred episodes
    
-![Full-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/ppo/images/full-training.png)
+![Full-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/images/full-training.png)
       
-![Closeup-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/ppo/images/closeup-training.png)
+![Closeup-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/images/closeup-training.png)
+
+  * **Testing**: After the training is complete, we let the trained agents play against each other:
+  ![trained-agents](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/images/trained-agents.gif)
+
      
 
 ## 4. Ideas for Future Work
