@@ -28,9 +28,22 @@
    
 ## 2. Learning Algorithm
 
-  * ### Multi-Agent DDPG
-    * Bla
-    * Bla
+  * ### Multi-Agent DDPG - MADDPG
+    **`MADDPG`** is an extension of **`DDPG`** for environment with multi agents.<br>
+      Let's look into it before talking about how it works for multiple agents. <br>
+      
+    * **DDPG** is a **policy gradient algorithm** that uses a stochastic behavior policy for exploration but estimates a deterministic target policy. Exploration is guaranteed by adding noise at training time to the generated actions.<br>
+      DDPG is an **actor-critic algorithm** as well. It uses two neural networks, one for the actor and one for the critic. These networks compute action predictions for the current state and generate a **temporal-difference (TD) error signal** at each time step. <br>
+      The input of the actor network is the current state, and the output is a real valued array representing the actions chosen from a continuous action space. <br>
+      In order to break possible temporal correlations, it uses a **replay buffer** to store experiences and sample from them randomly for training the actor and critic networks.
+      By updating the actor and critic network directly from the gradient computed with the TD error signal, the algorithm tends to diverge and never learn. For this reason we use 2 extra networks, called **target** networks. The objective is to generate the targets for your TD error computation and the trick is to slowly updating them by interpolating the new weights with the previous ones.
+
+      
+    * **MADDPG:** Similarly to DDPG, we use an actor network for each agent in the environment.<br>
+    Each actor receives "advice" from the critic that helps the actor decide what actions to reinforce during training. <br>
+    The critic tries to estimate the **expected reward** of an action at a particular state. This proves to be more stable than just using the reward directly (we trade bias for variance). <br>
+    To make it possible to train multiple agents that can act in a globally-coordinated way, we enhance the critics of each agent: the estimate for each action/state is made based on the observations and actions available from all the agents. <br>
+    At test time there is no need for the agents to access the information from the other agents.
     
   * ### Neural Network Architecture and hyperparameters
     For the **Architectures** of both the `Actors` and `Critics` I chose to use only fully connected layers.<br>
