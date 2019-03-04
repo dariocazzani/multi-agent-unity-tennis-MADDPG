@@ -42,7 +42,7 @@ cd requirements
 pip install .     
 ```
 
-#### Train the agent with PPO algorithm
+#### Train the agents
 ```
 python run-training.py
 ```
