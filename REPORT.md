@@ -109,3 +109,21 @@
       (fc3): Linear(in_features=300, out_features=1, bias=True)
     )
     ```
+  
+    The **Hyperparameters** are defined in `maddpg.py` from line `15` to line `24` and in `ddpg.py` from line `10` to line `13`
+
+    ``` python
+    BUFFER_SIZE = int(1e5)  # replay buffer size
+    BATCH_SIZE = 128        # minibatch size
+    UPDATE_FREQUENCY = 2    # How often to update
+    GAMMA = 0.99            # discount factor
+    TAU = 1e-3              # for soft update of target parameters
+    LR_ACTOR = 1e-4         # learning rate of the actor 
+    LR_CRITIC = 1e-3        # learning rate of the critic
+    WEIGHT_DECAY = 0        # L2 weight decay
+    NUM_AGENTS = 2          # Number of agents
+    RANDOM_SEED = 0
+    LR_ACTOR = 1e-4         # learning rate of the actor 
+    LR_CRITIC = 1e-3        # learning rate of the critic
+    WEIGHT_DECAY = 0        # L2 weight decay
+    ```
