@@ -138,7 +138,7 @@
 ![Closeup-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/images/closeup-training.png)
 
   * **Testing**: After the training is complete, we let the trained agents play against each other:
-  ![trained-agents](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/images/trained-agents.gif)
+  ![trained-agents](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/images/trained-agents-15sec.gif)
 
      
 
