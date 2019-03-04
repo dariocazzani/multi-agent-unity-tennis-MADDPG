@@ -85,3 +85,27 @@
         return self.fc3(x)
     ```
   
+    The structure is quite simple:
+    * Actor: has 2 hidden layers with `400` and `300` neurons respectively.<br>
+      The output has 2 neurons (corresponding to the action space size) and squeeze to be between `-1` and `+1` by the `tanh` op.
+    * Critic: has 2 hidden layers with `400` and `300` neurons respectively.<br>
+      The output has 1 neurons corresponding to the estimated value of the current `states+actions`.
+      The `init` function expects to know the number of agents because the Critic has access to the whole information available:
+      ```python
+      ...
+      def __init__(self, state_size, action_size, seed, num_agents, fc1_units=400, fc2_units=300):
+      ...
+      ```
+
+    ``` bash
+      Actor(
+      (fc1): Linear(in_features=24, out_features=400, bias=True)
+      (fc2): Linear(in_features=400, out_features=300, bias=True)
+      (fc3): Linear(in_features=300, out_features=2, bias=True)
+    )
+    Critic(
+      (fc1): Linear(in_features=52, out_features=400, bias=True)
+      (fc2): Linear(in_features=400, out_features=300, bias=True)
+      (fc3): Linear(in_features=300, out_features=1, bias=True)
+    )
+    ```
