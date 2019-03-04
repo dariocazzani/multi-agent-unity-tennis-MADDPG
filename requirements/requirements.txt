@@ -1,0 +1,14 @@
+pytest>=3.2.2
+docopt
+pyyaml
+Pillow>=4.2.1
+matplotlib
+protobuf==3.5.2
+grpcio==1.11.0
+numpy>=1.11.0
+torch
+pandas
+scipy
+ipykernel
+joblib
+tqdm
