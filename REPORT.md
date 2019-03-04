@@ -143,7 +143,7 @@
 
 ## 3. Plot of Rewards
 
-   * **Training**: Training took 61 episodes to learn a policy that would receive an average score of **0.5** averaged on 100 episodes.
+   * **Training**: Training took 5266 episodes to learn a policy that would receive an average score of **0.5** averaged on 100 episodes.
    Below the plot for the whole training (stopped as soon as the goal was reached) and a close-up on the last few hundred episodes
    
 ![Full-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/images/full-training.png)
