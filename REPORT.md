@@ -127,3 +127,22 @@
     LR_CRITIC = 1e-3        # learning rate of the critic
     WEIGHT_DECAY = 0        # L2 weight decay
     ```
+
+## 3. Plot of Rewards
+
+   * **Training**: Training took 61 episodes to learn a policy that would receive an average score of **0.5** averaged on 100 episodes.
+   Below the plot for the whole training (stopped as soon as the goal was reached) and a close-up on the last few hundred episodes
+   
+![Full-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/ppo/images/full-training.png)
+      
+![Closeup-training](https://github.com/dariocazzani/multi-agent-unity-tennis-MADDPG/blob/master/ppo/images/closeup-training.png)
+     
+
+## 4. Ideas for Future Work
+
+* **Sensitivity to initialization**: I found that the performance of the algorithm varied a lot across different runs with different random initializations. This is not satisfying since it feels like that it's matter of luck more than robustness of the algorithm. I'd like to continue working on it and make sure that the performance is comparable even when using different initializations
+
+* **Network architectures**: For implementing the MADDPG I took inspiration from the architecture suggested in the Udacity Code base for the implementation of an agent that learns using `DDPG`: [Implementation](https://github.com/udacity/deep-reinforcement-learning/blob/master/ddpg-pendulum/model.py) <br>
+  I'd like to experiment with different architectures (I believe that we can achieve good results with much smaller architectures).
+
+* **Self-play**: Because the 2 actors are playing the same game (just from 2 sides of a mirror), it would be interesting to rewrap the problem as a **Zero-sum game** and use what we learned from **Alphazero**
