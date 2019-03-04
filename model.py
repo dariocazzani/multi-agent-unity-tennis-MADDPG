@@ -72,3 +72,10 @@ class Critic(nn.Module):
         x = F.relu(self.fc1(_input))
         x = F.relu(self.fc2(x))
         return self.fc3(x)
+
+if __name__ == "__main__":
+    a = Actor(24, 2, 1)
+    c = Critic(24, 2, 1, 2)
+
+    print(a)
+    print(c)
